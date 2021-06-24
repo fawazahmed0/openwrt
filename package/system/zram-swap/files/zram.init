@@ -164,7 +164,7 @@ start()
 	local zram_dev="$( zram_getdev )"
 	zram_applicable "$zram_dev" || return 1
 	
-	local zram_priority=`cat /proc/swaps | tail -n +2 | awk '{print $5}' | sort | tail -n 1 | { grep . || echo -1; }`
+	local zram_priority=`cat /proc/swaps | tail -n +2 | awk '{print $5}' | sort -n | tail -n 1 | { grep . || echo -1; }`
 
 	logger -s -t zram_start -p daemon.debug "activating '$zram_dev' for swapping ($zram_size MegaBytes)"
 
