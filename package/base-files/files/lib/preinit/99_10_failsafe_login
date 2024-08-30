@@ -1,6 +1,10 @@
 # Copyright (C) 2006-2015 OpenWrt.org
 # Copyright (C) 2010 Vertical Communications
 
+failsafe_netlogin () {
+	telnetd -l /bin/login.sh <> /dev/null 2>&1
+}
+
 failsafe_shell() {
 	local console="$(sed -e 's/ /\n/g' /proc/cmdline | grep '^console=' | head -1 | sed -e 's/^console=//' -e 's/,.*//')"
 	[ -n "$console" ] || console=console
@@ -11,4 +15,5 @@ failsafe_shell() {
 	done &
 }
 
+boot_hook_add failsafe failsafe_netlogin
 boot_hook_add failsafe failsafe_shell
