@@ -1,6 +1,10 @@
 # Copyright (C) 2006-2015 OpenWrt.org
 # Copyright (C) 2010 Vertical Communications
 
+failsafe_netlogin () {
+	telnetd -l /bin/login.sh <> /dev/null 2>&1
+}
+
 failsafe_shell() {
 	local consoles="$(cat /sys/class/tty/console/active)"
 	[ -n "$consoles" ] || consoles=console
@@ -20,4 +24,5 @@ failsafe_shell() {
 
 }
 
+boot_hook_add failsafe failsafe_netlogin
 boot_hook_add failsafe failsafe_shell
