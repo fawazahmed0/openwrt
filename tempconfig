@@ -5,8 +5,12 @@ CONFIG_DEVEL=y
 CONFIG_BUSYBOX_CUSTOM=y
 CONFIG_BUSYBOX_CONFIG_ASH_OPTIMIZE_FOR_SIZE=y
 # CONFIG_BUSYBOX_CONFIG_FEATURE_IPV6 is not set
+CONFIG_BUSYBOX_CONFIG_FEATURE_TELNETD_STANDALONE=y
+CONFIG_BUSYBOX_CONFIG_TELNET=y
+CONFIG_BUSYBOX_CONFIG_TELNETD=y
 # CONFIG_BUSYBOX_DEFAULT_FEATURE_IPV6 is not set
 CONFIG_CCACHE=y
+# CONFIG_DRIVER_11N_SUPPORT is not set
 # CONFIG_IPV6 is not set
 # CONFIG_KERNEL_CRASHLOG is not set
 # CONFIG_KERNEL_IPV6 is not set
@@ -14,18 +18,68 @@ CONFIG_CCACHE=y
 # CONFIG_KERNEL_PRINTK is not set
 # CONFIG_KERNEL_PRINTK_TIME is not set
 CONFIG_KERNEL_SWAP=y
-# CONFIG_PACKAGE_MAC80211_DEBUGFS is not set
+CONFIG_PACKAGE_block-mount=y
+CONFIG_PACKAGE_ca-bundle=m
+CONFIG_PACKAGE_cgi-io=m
 CONFIG_PACKAGE_dropbear=m
+CONFIG_PACKAGE_ip-tiny=m
+CONFIG_PACKAGE_ipset=m
 CONFIG_PACKAGE_iptables=m
+CONFIG_PACKAGE_iptables-mod-conntrack-extra=m
+CONFIG_PACKAGE_iptables-mod-ipopt=m
+# CONFIG_PACKAGE_kmod-ath is not set
+# CONFIG_PACKAGE_kmod-ath9k is not set
+# CONFIG_PACKAGE_kmod-cfg80211 is not set
+CONFIG_PACKAGE_kmod-ipt-conntrack-extra=m
+CONFIG_PACKAGE_kmod-ipt-ipopt=m
+CONFIG_PACKAGE_kmod-ipt-ipset=m
+CONFIG_PACKAGE_kmod-ipt-raw=m
 CONFIG_PACKAGE_kmod-lib-crc-ccitt=m
+# CONFIG_PACKAGE_kmod-mac80211 is not set
 # CONFIG_PACKAGE_kmod-nf-ipt6 is not set
+CONFIG_PACKAGE_kmod-nfnetlink=m
 CONFIG_PACKAGE_kmod-ppp=m
 CONFIG_PACKAGE_kmod-pppoe=m
 CONFIG_PACKAGE_kmod-pppox=m
 CONFIG_PACKAGE_kmod-slhc=m
 # CONFIG_PACKAGE_libip6tc is not set
-CONFIG_PACKAGE_libpthread=m
-CONFIG_PACKAGE_opkg=m
+CONFIG_PACKAGE_libipset=m
+CONFIG_PACKAGE_libiwinfo-lua=m
+CONFIG_PACKAGE_liblua=m
+CONFIG_PACKAGE_liblucihttp=m
+CONFIG_PACKAGE_liblucihttp-lua=m
+CONFIG_PACKAGE_libmnl=m
+CONFIG_PACKAGE_libubus-lua=m
+CONFIG_PACKAGE_libuci-lua=m
+CONFIG_PACKAGE_lua=m
+CONFIG_PACKAGE_luci=m
+CONFIG_PACKAGE_luci-app-firewall=m
+CONFIG_PACKAGE_luci-app-mwan3=m
+CONFIG_PACKAGE_luci-app-opkg=m
+CONFIG_PACKAGE_luci-base=m
+CONFIG_PACKAGE_luci-compat=m
+CONFIG_PACKAGE_luci-lib-base=m
+CONFIG_PACKAGE_luci-lib-ip=m
+CONFIG_PACKAGE_luci-lib-jsonc=m
+CONFIG_PACKAGE_luci-lib-nixio=m
+CONFIG_PACKAGE_luci-mod-admin-full=m
+CONFIG_PACKAGE_luci-mod-dashboard=m
+CONFIG_PACKAGE_luci-mod-network=m
+CONFIG_PACKAGE_luci-mod-status=m
+CONFIG_PACKAGE_luci-mod-system=m
+CONFIG_PACKAGE_luci-proto-ppp=m
+CONFIG_PACKAGE_luci-theme-bootstrap=m
+CONFIG_PACKAGE_mwan3=m
 CONFIG_PACKAGE_ppp=m
 CONFIG_PACKAGE_ppp-mod-pppoe=m
+CONFIG_PACKAGE_rpcd=m
+CONFIG_PACKAGE_rpcd-mod-file=m
+CONFIG_PACKAGE_rpcd-mod-iwinfo=m
+CONFIG_PACKAGE_rpcd-mod-luci=m
+CONFIG_PACKAGE_rpcd-mod-rrdns=m
 CONFIG_PACKAGE_swconfig=m
+CONFIG_PACKAGE_uhttpd=m
+CONFIG_PACKAGE_uhttpd-mod-ubus=m
+CONFIG_USE_MKLIBS=y
+CONFIG_PACKAGE_iw=y
+CONFIG_PACKAGE_wireless-regdb=y
