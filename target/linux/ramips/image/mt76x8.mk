@@ -670,6 +670,20 @@ define Device/tplink_tl-wr850n-v2
 endef
 TARGET_DEVICES += tplink_tl-wr850n-v2
 
+define Device/tplink_tl-wr850n-v3
+  $(Device/tplink-v2)
+  IMAGE_SIZE := 3968k
+  DEVICE_MODEL := TL-WR850N
+  DEVICE_VARIANT := v3
+  TPLINK_FLASHLAYOUT := 4MLmtk
+  TPLINK_HWID := 0x08500003
+  TPLINK_HWREVADD := 0x3
+  IMAGES := sysupgrade.bin tftp-recovery.bin
+  IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
+  DEFAULT := n
+endef
+TARGET_DEVICES += tplink_tl-wr850n-v3
+
 define Device/tplink_tl-wr902ac-v3
   $(Device/tplink-v2)
   IMAGE_SIZE := 7808k
