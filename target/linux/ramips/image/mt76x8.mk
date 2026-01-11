@@ -675,7 +675,7 @@ define Device/tplink_tl-wr850n-v3
   IMAGE_SIZE := 3968k
   DEVICE_MODEL := TL-WR850N
   DEVICE_VARIANT := v3
-  TPLINK_FLASHLAYOUT := 4MLmtk
+  TPLINK_FLASHLAYOUT := 4Mmtk
   TPLINK_HWID := 0x08500003
   TPLINK_HWREVADD := 0x3
   IMAGES := sysupgrade.bin tftp-recovery.bin
