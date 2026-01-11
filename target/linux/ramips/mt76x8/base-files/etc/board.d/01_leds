@@ -77,8 +77,7 @@ tplink,tl-wa801nd-v5)
 	;;
 tplink,tl-mr3420-v5|\
 tplink,tl-wr840n-v4|\
-tplink,tl-wr842n-v5|\
-tplink,tl-wr850n-v3)
+tplink,tl-wr842n-v5)
 	ucidef_set_led_wlan "wlan2g" "wlan2g" "green:wlan" "phy0tpt"
 	ucidef_set_led_switch "lan" "lan" "green:lan" "switch0" "0x1e"
 	ucidef_set_led_switch "wan" "wan" "green:wan" "switch0" "0x01"
@@ -99,7 +98,8 @@ tplink,tl-wr841n-v13)
 	ucidef_set_led_switch "lan4" "lan4" "green:lan4" "switch0" "0x10"
 	ucidef_set_led_switch "wan" "wan" "green:wan" "switch0" "0x01"
 	;;
-tplink,tl-wr841n-v14)
+tplink,tl-wr841n-v14|\
+tplink,tl-wr850n-v3)
 	ucidef_set_led_switch "lan" "lan" "green:lan" "switch0" "0x1e"
 	ucidef_set_led_switch "wan" "wan" "green:wan" "switch0" "0x01"
 	ucidef_set_led_wlan "wifi_led" "wifi" "green:wlan" "phy0tpt"
