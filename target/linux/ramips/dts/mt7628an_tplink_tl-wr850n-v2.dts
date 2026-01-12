@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later OR MIT
 
-#include "mt7628an_tplink_8m.dtsi"
+#include "mt7628an_tplink_4m.dtsi"
 
 / {
 	compatible = "tplink,tl-wr850n-v2", "mediatek,mt7628an-soc";

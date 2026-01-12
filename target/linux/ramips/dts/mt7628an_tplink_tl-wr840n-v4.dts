@@ -1,4 +1,4 @@
-#include "mt7628an_tplink_8m.dtsi"
+#include "mt7628an_tplink_4m.dtsi"
 
 / {
 	compatible = "tplink,tl-wr840n-v4", "mediatek,mt7628an-soc";

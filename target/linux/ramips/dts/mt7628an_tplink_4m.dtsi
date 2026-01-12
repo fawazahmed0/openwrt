@@ -1,0 +1,57 @@
+#include "mt7628an.dtsi"
+
+#include <dt-bindings/input/input.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	chosen {
+		bootargs = "console=ttyS0,115200";
+	};
+
+	aliases {
+		label-mac-device = &ethernet;
+	};
+};
+
+&spi0 {
+	status = "okay";
+
+	flash@0 {
+		compatible = "jedec,spi-nor";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+
+		partitions {
+			compatible = "fixed-partitions";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			partition@0 {
+				label = "boot";
+				reg = <0x0 0x10000>;
+				read-only;
+			};
+
+			partition@10000 {
+				compatible = "tplink,firmware";
+				label = "firmware";
+				reg = <0x10000 0x3e0000>;
+			};
+
+			factory: partition@3f0000 {
+				label = "factory";
+				reg = <0x3f0000 0x10000>;
+				read-only;
+			};
+		};
+	};
+};
+
+&wmac {
+	status = "okay";
+	mtd-mac-address = <&factory 0xf100>;
+};
+
+&ethernet {
+	mtd-mac-address = <&factory 0xf100>;
+};
