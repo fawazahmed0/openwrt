@@ -220,13 +220,17 @@ TARGET_DEVICES += tplink_tl-wr802n-v4
 define Device/tl-wr840n-v4
   $(Device/tplink)
   DTS := TL-WR840NV4
-  IMAGE_SIZE := 7808k
+  IMAGE_SIZE := 3968k
   DEVICE_TITLE := TP-Link TL-WR840N v4
-  TPLINK_FLASHLAYOUT := 8Mmtk
+  TPLINK_FLASHLAYOUT := 4Mmtk
   TPLINK_HWID := 0x08400004
   TPLINK_HWREV := 0x1
   TPLINK_HWREVADD := 0x4
   TPLINK_HVERSION := 3
+  IMAGES := sysupgrade.bin tftp-recovery.bin
+  IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
+  SUPPORTED_DEVICES += tplink,tl-wr840n-v4
+  DEFAULT := n
 endef
 TARGET_DEVICES += tl-wr840n-v4
 

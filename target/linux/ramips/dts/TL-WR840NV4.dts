@@ -1,6 +1,6 @@
 /dts-v1/;
 
-#include "TPLINK-8M.dtsi"
+#include "TPLINK-4M.dtsi"
 
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/input/input.h>
