@@ -33,12 +33,18 @@
 			partition@20000 {
 				compatible = "tplink,firmware";
 				label = "firmware";
-				reg = <0x20000 0x3d0000>;
+				reg = <0x20000 0x7a0000>;
 			};
 
-			factory: partition@3f0000 {
+			partition@7c0000 {
+				label = "config";
+				reg = <0x7c0000 0x10000>;
+				read-only;
+			};
+
+			factory: partition@7d0000 {
 				label = "factory";
-				reg = <0x3f0000 0x10000>;
+				reg = <0x7d0000 0x30000>;
 				read-only;
 			};
 		};
@@ -56,7 +62,7 @@
 &wmac {
 	status = "okay";
 	mtd-mac-address = <&factory 0xf100>;
-	mediatek,mtd-eeprom = <&factory 0x0>;
+	mediatek,mtd-eeprom = <&factory 0x20000>;
 };
 
 &ethernet {
