@@ -1,4 +1,9 @@
-#include "TL-WR840NV6.x.dtsi"
+/dts-v1/;
+
+#include "TPLINK-4M.dtsi"
+
+#include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
 
 / {
 	compatible = "tplink,tl-wr840n-v4", "mediatek,mt7628an-soc";
@@ -9,6 +14,17 @@
 		led-failsafe = &led_power;
 		led-running = &led_power;
 		led-upgrade = &led_power;
+	};
+
+	keys {
+		compatible = "gpio-keys-polled";
+		poll-interval = <20>;
+
+		reset {
+			label = "reset";
+			gpios = <&gpio1 6 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_RESTART>;
+		};
 	};
 
 	leds {
@@ -41,6 +57,15 @@
 	};
 };
 
-&ralinkgpio {
-	ralink,group = "p0led_an", "p2led_an", "perst", "wdt";
+&pinctrl {
+	state_default: pinctrl0 {
+		gpio {
+			ralink,group = "p0led_an", "p2led_an", "perst", "refclk", "wdt", "wled_an";
+			ralink,function = "gpio";
+		};
+	};
+};
+
+&esw {
+	mediatek,portmap = <0x3e>;
 };
